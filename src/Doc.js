@@ -58,7 +58,7 @@ class Doc extends DocBase {
   }
 
   get color () {
-    return 0x7D32AA
+    return 0xCB74FF
   }
 
   get (...terms) {
@@ -100,7 +100,12 @@ class Doc extends DocBase {
     if (element) return element.embed(options)
 
     const searchResults = this.search(query, options)
-    if (!searchResults) return null
+    if (!searchResults) {
+      const baseEmbed = this.baseEmbed()
+      baseEmbed.title = 'Search results:'
+      baseEmbed.description = 'No result found!'
+      return baseEmbed
+    }
 
     const embed = this.baseEmbed()
     embed.title = 'Search results:'

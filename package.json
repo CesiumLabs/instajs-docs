@@ -1,6 +1,6 @@
 {
   "name": "instajs-docs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Insta.js docs for discord bots.",
   "main": "index.js",
   "scripts": {
